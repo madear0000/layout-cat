@@ -1,0 +1,132 @@
+.number {
+    margin-top: 140px;
+    height: 610px;
+    width: 100%;
+    overflow-x: hidden;
+    
+
+    &_area{
+        
+        
+        &_carousel {
+            display: flex;
+            position: relative;
+            left: 0;
+            transition: all ease 0.5s;
+        }
+
+        & h4 {
+            text-align: center;
+            font-family: 'Rubik';
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 42.66px;
+        }
+
+        &_slide{
+            position: relative;
+            display: flex;
+            margin-top: 70px;
+            margin-right: 10000px;
+
+            &_text_box {
+                width: 500px;
+                height: 284px;
+                background: rgba(255, 255, 255, 1);
+                position: absolute;
+                margin-left: 530px;
+                margin-top: 70px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 25px 0px rgba(208, 208, 208, 0.25);
+                padding-top: 40px;
+                padding-right: 100px;
+
+                &__title{
+                    margin-left: 100px;
+                    font-family: Rubik;
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 26.07px;
+                    text-align: left;
+                }
+
+                &__list{
+                    margin-left: 87px;
+                    list-style: url('../img/circle.png');
+
+                    li {
+                        margin-top: 15px;
+                    }
+                }
+
+                &_button {
+                    margin-top: 20px;
+                    position: relative;
+                    display: flex;
+                    width: 206px;
+                    height: 50px;
+                    background: rgba(255, 114, 54, 1);
+                    border: none;
+                    border-radius: 40px;
+                    padding-left: 30px;
+                    align-items: center;
+                    margin-left: 97px;
+            
+                    &__book{
+                        color: white;
+                        text-decoration: none;
+                        position: relative;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 19.2px;
+                    }
+            
+                    &__book:hover {
+                        color: white;
+                    }
+            
+                    &__paw {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }   
+
+        &__for_carousel {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+
+            &__butons {
+
+                &_one {
+                    background-color: white;
+                    border-radius: 50%;
+                    box-shadow: 0px 2px 12px 0px rgba(173, 152, 143, 0.25);
+                    width: 36px;
+                    height: 36px;
+                    color: rgba(255, 114, 54, 1);
+                    border: none;
+
+                    &__right {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            &__numbers_slide {
+                margin-left: auto;
+                margin-right: auto;
+                &__points {
+                    width: 12px;
+                    height: 12px;
+                    background: rgba(225, 225, 225, 1);
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+}
+

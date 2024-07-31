@@ -1,0 +1,26 @@
+.footer {
+    height: 50px;
+    border-top: 1px solid rgba(239, 239, 239, 1);
+
+    &_line {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        text-align: left;
+        color: rgba(143, 143, 143, 1);
+
+
+        &_copyright {
+            display: flex;
+
+
+            &__text {
+                margin-left: 5px;
+            }
+        }
+    }
+}
