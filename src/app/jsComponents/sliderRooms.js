@@ -36,21 +36,21 @@ export default function sliderRooms() {
     
     buttonForRight.addEventListener('click', () => {
         if (window.innerWidth > 768) {
-            if (offset > -21200) {
-                offset -= 10600;
-                slider.style.left = offset + 'px';
+            if (offset > -1325) {
+                offset -= 662.5;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonPlus();
             }
         } else if (window.innerWidth > 320 && window.innerWidth <= 768) {
-            if (offset > -20880) {
-                offset -= 10440;
-                slider.style.left = offset + 'px';
+            if (offset > -1304) {
+                offset -= 652.5;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonPlus();
             }
         } else if (window.innerWidth <= 320) {
-            if (offset > -20580) {
-                offset -= 10290;
-                slider.style.left = offset + 'px';
+            if (offset > -1286) {
+                offset -= 643;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonPlus();
             }
         } 
@@ -59,13 +59,13 @@ export default function sliderRooms() {
     buttonForLeft.addEventListener('click', () => {
         if (window.innerWidth > 768) {
             if (offset < 0) {
-                offset  += 10600;
-                slider.style.left = offset + 'px';
+                offset  += 662.5;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonMinus();
             }  
         }  else if (window.innerWidth > 320 && window.innerWidth <= 768) {
             if (offset < 0) {
-                offset  += 10440;
+                offset  += 652.5;
                 slider.style.left = offset + 'px';
                 checkForRadioButtonMinus();
             }  

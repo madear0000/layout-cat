@@ -123,21 +123,21 @@ export default function sliderReviews() {
     
     buttonForRightReviews.addEventListener('click', () => {
         if (window.innerWidth > 768) {
-            if (offsetReviews > (slidersReviews.length - 3) * -500) {
-                offsetReviews -= 500;
-                sliderReviews.style.left = offsetReviews + 'px';
+            if (offsetReviews > (slidersReviews.length - 3) * -31.5) {
+                offsetReviews -= 31.5;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsRightFull();
             }
         } else if (window.innerWidth > 320 && window.innerWidth <= 768) {
-            if (offsetReviews > (slidersReviews.length - 1) * -500) {
-                offsetReviews -= 500;
-                sliderReviews.style.left = offsetReviews + 'px';
+            if (offsetReviews > (slidersReviews.length - 1) * -31.5) {
+                offsetReviews -= 31.5;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsRight768();
             }
         } else if (window.innerWidth <= 320) {
-            if (offsetReviews > (slidersReviews.length) * -335) {
-                offsetReviews -= 335;
-                sliderReviews.style.left = offsetReviews + 'px';
+            if (offsetReviews > (slidersReviews.length) * -20.9) {
+                offsetReviews -= 20.9;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsRight320();
             }
         } 
@@ -146,20 +146,20 @@ export default function sliderReviews() {
     buttonForLeftReviews.addEventListener('click', () => {
         if (window.innerWidth > 768) {
             if (offsetReviews < 0) {
-                offsetReviews += 500;
-                sliderReviews.style.left = offsetReviews + 'px';
+                offsetReviews += 31.5;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsLeftFull();
             }
-        } else if (window.innerWidth > 320 && window.innerWidth <= 768) {
+        } else if (window.innerWidth > 320 && window.innerWidth <= 31.5) {
             if (offsetReviews < 0) {
-                offsetReviews += 500;
-                sliderReviews.style.left = offsetReviews + 'px';
+                offsetReviews += 31.5;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsLeft768();
             }
         } else if (window.innerWidth <= 320) {
             if (offsetReviews < 0) {
-                offsetReviews += 340;
-                sliderReviews.style.left = offsetReviews + 'px';
+                offsetReviews += 20.9;
+                sliderReviews.style.left = offsetReviews + 'rem';
                 forCheckRadioButtonReviewsLeft320();
             }
         }

@@ -10,11 +10,10 @@
   },
   "devDependencies": {
     "sass": "^1.77.8",
-    "scss": "^0.2.4",
-    "vite": "^5.3.4"
+    "vite": "^5.3.5"
   },
   "dependencies": {
     "@fontsource/lato": "^5.0.21",
-    "jQuery": "^1.7.4"
+    "pug": "^3.0.3"
   }
 }
