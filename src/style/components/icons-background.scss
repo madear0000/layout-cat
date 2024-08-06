@@ -1,20 +1,9 @@
 .background_paw {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: end;
-
-    &__down {
-        margin-top: 50px;
-    }
+    @include background-images(absolute, 100%, flex, end, 50px);
 }
 
-
 .background_fish {
-    position: absolute;
-    width: 100%;
-
-    margin-top: 150px;
+    @include background-images(absolute, 100%, flex, baseline, 150px);
 }
 
 .background {

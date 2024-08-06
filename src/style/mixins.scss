@@ -1,0 +1,49 @@
+// Define mixins
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+  
+@mixin hidden {
+    display: none;
+}
+  
+@mixin span-style($position, $width, $height, $bg-color, $left) {
+    position: $position;
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+    left: $left;
+}
+
+@mixin background-images($position, $width, $display, $content, $margin) {
+    position: $position;
+    width: $width;
+    display: $display;
+    justify-content: $content;
+    margin-top: $margin;
+}
+
+@mixin block($block) {
+    .#{$block} {
+      @content;
+    }
+}
+  
+@mixin element($block, $element) {
+    .#{$block}__#{$element} {
+      @content;
+    }
+}
+
+@mixin smal-element($block, $element) {
+    .#{$block}_#{$element} {
+      @content;
+    }
+}
+  
+
+  
+

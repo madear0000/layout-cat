@@ -1,21 +1,19 @@
-.number {
+@include block('number') {
     margin-top: 140px;
     height: 610px;
     width: 100%;
     overflow-x: hidden;
-    
 
-    &_area{
-        
-        
-        &_carousel {
+    @include smal-element('number', 'area') {
+
+        @include smal-element('number_area', 'carousel') {
             display: flex;
             position: relative;
             left: 0;
             transition: all ease 0.5s;
         }
 
-        & h4 {
+        h4 {
             text-align: center;
             font-family: 'Rubik';
             font-size: $title-desktop-size;
@@ -23,13 +21,13 @@
             line-height: 42.66px;
         }
 
-        &_slide{
+        @include smal-element('number_area', 'slide') {
             position: relative;
             display: flex;
             margin-top: 70px;
             margin-right: 10000px;
 
-            &_text_box {
+            @include smal-element('number_area_slide', 'text_box') {
                 width: 500px;
                 height: 284px;
                 background: rgba(255, 255, 255, 1);
@@ -41,7 +39,7 @@
                 padding-top: 40px;
                 padding-right: 100px;
 
-                &__title{
+                @include element('number_area_slide_text_box', 'title') {
                     margin-left: 100px;
                     font-family: Rubik;
                     font-size: 22px;
@@ -50,7 +48,7 @@
                     text-align: left;
                 }
 
-                &__list{
+                @include element('number_area_slide_text_box', 'list') {
                     margin-left: 87px;
                     list-style: url('../img/circle.png');
 
@@ -59,7 +57,7 @@
                     }
                 }
 
-                &_button {
+                @include smal-element('number_area_slide_text_box', 'button') {
                     margin-top: 20px;
                     position: relative;
                     display: flex;
@@ -71,35 +69,35 @@
                     padding-left: 30px;
                     align-items: center;
                     margin-left: 97px;
-            
-                    &__book{
+
+                    @include element('number_area_slide_text_box_button', 'book') {
                         color: white;
                         text-decoration: none;
                         position: relative;
                         font-size: $main-desktop-size;
                         font-weight: $title-weight;
                         line-height: 19.2px;
+
+                        &:hover {
+                            color: white;
+                        }
                     }
-            
-                    &__book:hover {
-                        color: white;
-                    }
-            
-                    &__paw {
+
+                    @include element('number_area_slide_text_box_button', 'paw') {
                         margin-left: 20px;
                     }
                 }
             }
-        }   
+        }
 
-        &__for_carousel {
+        @include element('number_area', 'for_carousel') {
             margin-top: 40px;
             display: flex;
             align-items: center;
 
-            &__butons {
+            @include element('number_area__for_carousel', 'butons') {
 
-                &_one {
+                @include smal-element('number_area__for_carousel__butons', 'one') {
                     background-color: white;
                     border-radius: 50%;
                     box-shadow: 0px 2px 12px 0px rgba(173, 152, 143, 0.25);
@@ -108,16 +106,17 @@
                     color: $background-orange;
                     border: none;
 
-                    &__right {
+                    @include element('number_area__for_carousel__butons_one', 'right') {
                         margin-left: 10px;
                     }
                 }
             }
 
-            &__numbers_slide {
+            @include element('number_area__for_carousel', 'numbers_slide') {
                 margin-left: auto;
                 margin-right: auto;
-                &__points {
+
+                @include element('number_area__for_carousel__numbers_slide', 'points') {
                     width: 12px;
                     height: 12px;
                     background: rgba(225, 225, 225, 1);
@@ -129,4 +128,3 @@
         }
     }
 }
-

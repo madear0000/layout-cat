@@ -1,72 +1,62 @@
-.WhyWe {
+@include block('WhyWe') {
     height: 757px;
     margin-top: 140px;
-
-    &_area {
-        text-align: center;
-
-        & h3 {
-            font-family: Rubik;
-            font-size: $title-desktop-size;
-            font-weight: 700;
-            line-height: 42.66px;
+  
+    @include smal-element('WhyWe', 'area') {
+      text-align: center;
+  
+      h3 {
+        font-family: Rubik;
+        font-size: $title-desktop-size;
+        font-weight: 700;
+        line-height: 42.66px;
+      }
+  
+      @include smal-element('WhyWe_area', 'rows') {
+        margin-top: 30px;
+  
+        @include element('WhyWe_area_rows', 'row') {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
         }
-
-        &_rows {
-            margin-top: 30px;
-
-            &__row {
-                margin-top: 20px;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
+  
+        @include element('WhyWe_area_rows', 'block') {
+          margin-top: 20px;
+          position: relative;
+          width: 370px;
+          height: 321px;
+          background-color: white;
+          box-shadow: 0px 0px 25px 0px $shadow-color;
+          border-radius: 8px;
+          padding: 30px 50px 30px 30px;
+          text-align: left;
+  
+          @include element('WhyWe_area_rows__block', 'icon') {
+            width: 91px;
+            height: 91px;
+          }
+  
+          @include element('WhyWe_area_rows__block', 'text') {
+            margin-top: 25px;
+  
+            h4 {
+              font-family: Rubik;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 30.8px;
             }
-    
-            &__block {
-                margin-top: 20px;
-                position: relative;
-                width: 370px;
-                height: 321px;
-                background-color: white;
-                box-shadow: 0px 0px 25px 0px $shadow-color;
-                border-radius: 8px;
-                padding-left: 30px;
-                padding-right: 50px;
-                padding-top: 30px;
-                padding-bottom: 30px;
-                text-align: left;
 
-
-                &__icon {
-                    width: 91px;
-                    height: 91px;
-                }
-
-                &__text h4{
-                    font-family: Rubik;
-                    font-size: 20px;
-                    font-weight: 500;
-                    line-height: 30.8px;
-                    
-                }
-
-                &__text {
-                    margin-top: 25px;
-
-                    &__desription {
-                        font-size: $main-desktop-size;
-                        font-weight: 400;
-                        line-height: 22.4px;
-                        text-align: left;
-                    }
-                }
-
-
-
-
+            @include element('WhyWe_area_rows__block__text', 'desription') {
+              font-size: $main-desktop-size;
+              font-weight: 400;
+              line-height: 22.4px;
+              text-align: left;
             }
+          }
         }
-
-
+      }
     }
-}
+  }
+  

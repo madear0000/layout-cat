@@ -1,9 +1,9 @@
-.reviews {
+@include block('reviews') {
     margin-top: 150px;
 
-    &_area {    
-
+    @include smal-element('reviews', 'area') {
         overflow-x: hidden;
+
         h4 {
             font-family: Rubik;
             font-size: $title-desktop-size;
@@ -11,16 +11,15 @@
             line-height: 42.66px;
             text-align: center;
         }
-    
-        &__coments {
+
+        @include element('reviews_area', 'coments') {
             margin-top: 70px;
             display: flex;
             position: relative;
             left: 0;
             transition: all ease 0.5s;
-            
-    
-            &_one {
+
+            @include smal-element('reviews_area__coments', 'one') {
                 margin-right: 30px;
                 flex-shrink: 0;
                 width: 470px;
@@ -30,27 +29,26 @@
                 box-shadow: 0px 0px 25px 0px $shadow-color;
                 padding-top: 30px;
                 padding-right: 40px;
-                
-                &_info {
 
-                    &__img {
+                @include smal-element('reviews_area__coments_one', 'info') {
+
+                    @include element('reviews_area__coments_one_info', 'img') {
                         height: 27px;
                         position: absolute;
                         width: 27px;
                         margin-left: 20px;
                     }
 
-                    &__text {
+                    @include element('reviews_area__coments_one_info', 'text') {
                         font-size: $main-desktop-size;
                         font-weight: 500;
                         line-height: 22.4px;
                         text-align: left;
                         margin-left: 50px;
-
                     }
                 }
 
-                &_data {
+                @include smal-element('reviews_area__coments_one', 'data') {
                     margin-left: 50px;
                     display: flex;
                     margin-top: 20px;
@@ -59,12 +57,45 @@
                     font-weight: 400;
                     line-height: 16.8px;
                     color: rgba(132, 132, 132, 1);
-
-
                 }
-                
+            }
+        }
+    }
+}
+
+@include element('number_area', 'for_carousel') {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+
+    @include element('number_area__for_carousel', 'butons') {
+
+        @include smal-element('number_area__for_carousel__butons', 'one') {
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 2px 12px 0px rgba(173, 152, 143, 0.25);
+            width: 36px;
+            height: 36px;
+            color: $background-orange;
+            border: none;
+
+            @include element('number_area__for_carousel__butons_one', 'right') {
+                margin-left: 10px;
             }
         }
     }
 
+    @include element('number_area__for_carousel', 'numbers_slide') {
+        margin-left: auto;
+        margin-right: auto;
+
+        @include element('number_area__for_carousel__numbers_slide', 'points') {
+            width: 12px;
+            height: 12px;
+            background: rgba(225, 225, 225, 1);
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: all 0.5s;
+        }
+    }
 }

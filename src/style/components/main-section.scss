@@ -1,75 +1,70 @@
-
-
-.main {
+@include block('main') {
     width: 100%;
     background: url('../img/main-cat.png') right no-repeat;
     height: 504px;
     border-top: 1px solid transparent;
-
-    &_text {
-        position: relative;
-        margin-top: 158px;
-
-        &__city {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16.8px;
-
+  
+    @include element('main', 'text') {
+      position: relative;
+      margin-top: 158px;
+  
+      @include element('main__text', 'city') {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+      }
+  
+      @include element('main__text', 'name') {
+        h1 {
+          font-family: 'Rubik';
+          font-size: 62px;
+          font-weight: 700;
+          line-height: 73.47px;
         }
-
-        &__name h1{
-            font-family: 'Rubik';
-            font-size: 62px;
-            font-weight: 700;
-            line-height: 73.47px;
-
-        }
-
-        &__cosines {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 24px;
-
-        }
+      }
+  
+      @include element('main__text', 'cosines') {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+      }
     }
-
-    &_button {
-        margin-top: 40px;
+  
+    @include element('main', 'button') {
+      margin-top: 40px;
+      position: relative;
+      display: flex;
+      width: 206px;
+      height: 50px;
+      background-color: white;
+      border: none;
+      border-radius: 40px;
+      padding-left: 30px;
+      align-items: center;
+  
+      @include element('main__button', 'book') {
+        color: black;
+        text-decoration: none;
         position: relative;
-        display: flex;
-        width: 206px;
-        height: 50px;
-        background-color: white;
-        border: none;
-        border-radius: 40px;
-        padding-left: 30px;
-        align-items: center;
-
-        &__book{
-            color: black;
-            text-decoration: none;
-            position: relative;
-            font-size: $main-desktop-size;
-            font-weight: $title-weight;
-            line-height: 19.2px;
+        font-size: $main-desktop-size;
+        font-weight: $title-weight;
+        line-height: 19.2px;
+  
+        &:hover {
+          color: black;
         }
-
-        &__book:hover {
-            color: black;
-        }
-
-        &__paw {
-            margin-left: 20px;
-        }
+      }
+  
+      @include element('main__button', 'paw') {
+        margin-left: 20px;
+      }
     }
-}
-
-
-
-.mask_backgorund {
+  }
+  
+  @include block('mask_backgorund') {
     position: absolute;
     background: url('../img/MaskGroup.png') left no-repeat;
     height: 503px;
     width: 100%;
-}
-
+  }
+  
