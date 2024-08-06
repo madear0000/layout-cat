@@ -37,7 +37,7 @@
                 @include element('WhyWe_area_rows__block', 'icon') {
                     width: 55px;
                     height: 55px;
-                    img {
+                    @include element('WhyWe_area_eows__block__icon', 'image') {
                         width: 55px;
                         height: 55px;
                     }
@@ -46,7 +46,7 @@
               @include element('WhyWe_area_rows__block', 'text') {
                 margin-top: 15px;
       
-                h4 {
+                @include element('WhyWe_area_rows__block__text', 'title') {
                     font-size: 20px;
                     font-weight: 500;
                     line-height: 28px;
@@ -66,11 +66,8 @@
 
     @include smal-element('background', 'fish') {
         margin-top: 400px;
-
-        img {
-            width: 339px;
-            height: 101px;
-        }
+        width: 339px;
+        height: 101px;
     }
 
     @include block('number') {
@@ -114,7 +111,7 @@
                         line-height: 18px;
                         margin-left: 27px;
     
-                        li {
+                        @include element('number_area_slide_text_box__list', 'string') {
                             margin-top: 15px;
                         }
                     }
@@ -135,11 +132,13 @@
     @include block('map') {    
         @include smal-element('map', 'area') {
             @include smal-element('map_area', 'info') {
-                width: 369px;
+                width: 50vw;
             }
     
             @include smal-element('map_area', 'map') {
-                margin-left: 369px;
+                margin-left: 50vw;
+                width: 50vw;
+                
             }
         }
     }
@@ -160,7 +159,7 @@
             top: 100px;
             display: none;
     
-            a {
+            @include element('header__menu', 'one_text') {
                 margin-top: 20px;
                 margin-left: 0px;
                 font-family: Rubik;
@@ -170,21 +169,25 @@
                 text-align: left;
             }
     
-            @include element('header_menu', 'more_info') {
+            @include element('header__menu', 'more_info') {
                 display: block;
                 margin-top: 25px;
     
-                a {
+                @include element('header__menu__more_info', 'call') {
                     font-family: Rubik;
                     font-size: $main-desktop-size;
                     font-weight: 400;
                     line-height: 18.96px;
+                    color: black;
+                    text-decoration: none;
                 }
     
-                @include element('header_menu_more_info', 'online') {
+                @include element('header__menu__more_info', 'online') {
                     margin-top: 25px;
     
-                    a {
+                    @include element('header__menu__more_info__online', 'brands') {
+                        text-decoration: none;
+                        color: black;
                         font-size: 25px;
                         margin-right: 10px;
                     }
@@ -237,7 +240,7 @@
 
     @include block('WhyWe') {
         @include smal-element('WhyWe', 'area') {
-            h3 {
+            @include element('WhyWe_area', 'main_title') {
                 font-family: Rubik;
                 font-size: 28px;
                 font-weight: 700;
@@ -253,7 +256,7 @@
                     padding-top: 15px;
     
                     @include element('WhyWe_area_rows__block', 'text') {
-                        h4 {
+                        @include element('WhyWe_area_rows__block__text', 'title') {
                             font-family: Rubik;
                             font-size: 18px;
                             font-weight: 500;
@@ -273,8 +276,9 @@
     
     @include block('background_fish') {
         margin-top: 1380px;
+        width: 100%;
     
-        img {
+        @include element('background_fish', 'image'){
             width: 106px;
             height: 46px;
         }
@@ -283,7 +287,7 @@
 
     .background_paw {
         margin-top: 130px;
-        img {
+        @include element('background_paw', 'image') {
             width: 100px;
         }
     }
@@ -322,6 +326,7 @@
                     }
     
                     @include smal-element('number_area_slide_text_box', 'button') {
+                        margin-top: 10px;
                         margin-left: 37px;
     
     
@@ -410,7 +415,7 @@
             position: absolute;
             margin-top: 120px;
             
-            a {
+            @include element('up_footer__menu', 'string') {
                 margin-left: 0;
                 margin-right: 40px;
                 margin-top: 10px;

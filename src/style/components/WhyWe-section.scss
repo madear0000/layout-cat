@@ -5,7 +5,7 @@
     @include smal-element('WhyWe', 'area') {
       text-align: center;
   
-      h3 {
+      @include element('WhyWe_area', 'main_title') {
         font-family: Rubik;
         font-size: $title-desktop-size;
         font-weight: 700;
@@ -41,7 +41,7 @@
           @include element('WhyWe_area_rows__block', 'text') {
             margin-top: 25px;
   
-            h4 {
+            @include element('WhyWe_area_rows__block__text', 'title') {
               font-family: Rubik;
               font-size: 20px;
               font-weight: 500;

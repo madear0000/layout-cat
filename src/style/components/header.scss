@@ -29,7 +29,7 @@
         background-color: white;
         @include hidden;
 
-        span {
+        @include element('header__burger', 'line') {
             @include span-style(absolute, 30px, 3px, black, 5px);
             transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 

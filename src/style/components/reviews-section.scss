@@ -4,7 +4,7 @@
     @include smal-element('reviews', 'area') {
         overflow-x: hidden;
 
-        h4 {
+        @include element('reviews_area', 'main_title') {
             font-family: Rubik;
             font-size: $title-desktop-size;
             font-weight: $title-weight;

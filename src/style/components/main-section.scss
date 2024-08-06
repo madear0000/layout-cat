@@ -15,7 +15,8 @@
       }
   
       @include element('main__text', 'name') {
-        h1 {
+
+        @include element('main__text__name', 'title') {
           font-family: 'Rubik';
           font-size: 62px;
           font-weight: 700;

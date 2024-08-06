@@ -13,7 +13,7 @@
             transition: all ease 0.5s;
         }
 
-        h4 {
+        @include element('number_area', 'main_title') {
             text-align: center;
             font-family: 'Rubik';
             font-size: $title-desktop-size;
@@ -52,7 +52,7 @@
                     margin-left: 87px;
                     list-style: url('../img/circle.png');
 
-                    li {
+                    @include element('number_area_slide_text_box__list', 'string') {
                         margin-top: 15px;
                     }
                 }
