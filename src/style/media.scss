@@ -1,65 +1,70 @@
 @media screen and (max-width: 768px) {
-    .container {
+    @include block('container') {
         width: 678px;
     }
 
 
-    
-
-    .main {
+    @include block('main') {
         background: url('../img/main-cat-768.png') center bottom no-repeat;
         height: 868px;
         text-align: center;
 
-        &_button {
+        @include element('main', 'button') {
             margin-left: auto;
             margin-right: auto;
         }
 
-        &_text {
+        @include element('main', 'text') {
             margin-top: 100px;
         }
     }
 
-    .mask_backgorund {
+
+    @include block('mask_backgorund') {
         background: url('../img/MaskBackgroundTop.png') center no-repeat;
     }
 
-    .WhyWe_area_rows__block {
-        width: 324px;
-        height: 285px;
-        padding-right: 15px;
-    }
 
-    .WhyWe_area_rows__block__text__desription {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 21px;
-    }
-
-    .WhyWe_area_rows__block__text {
-        margin-top: 15px;
-    }
-
-    .WhyWe_area_rows__block__icon img{
-        width: 55px;
-        height: 55px;
-    }
+    @include block('WhyWe') {      
+        @include smal-element('WhyWe', 'area') {      
+          @include smal-element('WhyWe_area', 'rows') {
+            @include element('WhyWe_area_rows', 'row') {
+                @include element('WhyWe_area_rows', 'block') {
+                    width: 324px;
+                    height: 285px;
+                    padding-right: 15px;
+                
+                @include element('WhyWe_area_rows__block', 'icon') {
+                    width: 55px;
+                    height: 55px;
+                    img {
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+      
+              @include element('WhyWe_area_rows__block', 'text') {
+                margin-top: 15px;
+      
+                h4 {
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 28px;
+                }
     
-    .WhyWe_area_rows__block__icon{
-        width: 55px;
-        height: 55px;
+                @include element('WhyWe_area_rows__block__text', 'desription') {
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 21px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
-
-    .WhyWe_area_rows__block__text h4 {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 28px;
-
-    }
-
-    .background_fish {
+    @include smal-element('background', 'fish') {
         margin-top: 400px;
 
         img {
@@ -68,71 +73,93 @@
         }
     }
 
-    .number {
+    @include block('number') {
         margin-top: 350px;
-
-        &_area_slide__img{
-            width: 442px;
-            height: 326px;
-        }
-
-        &_area_slide_text_box {
-            width: 345px;
-            height: 266px;
-            margin-left: 330px;
-            margin-top: 40px;
-            padding-right: 30px;
-
-            &__title{
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 23.7px;
-                margin-left: 40px;
-            }
-
-            &__list {
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 18px;
-                margin-left: 27px;
-
-            }
-
-            &_button {
-                margin-left: 37px;
-            }
-
-
-        }
-    }
-
-    .map_area{
     
-        &_info {
-        width: 369px;
-        }
-
-        &_map {
-            margin-left: 369px;
+        @include smal-element('number', 'area') {
+            @include smal-element('number_area', 'carousel') {
+                display: flex;
+                position: relative;
+                left: 0;
+                transition: all ease 0.5s;
+            }
+    
+            @include smal-element('number_area', 'slide') {
+                position: relative;
+                display: flex;
+                margin-right: 10000px;
+    
+                @include smal-element('number_area_slide', 'img') {
+                    width: 442px;
+                    height: 326px;
+                }
+    
+                @include smal-element('number_area_slide', 'text_box') {
+                    width: 345px;
+                    height: 266px;
+                    margin-left: 330px;
+                    margin-top: 40px;
+                    padding-right: 30px;
+    
+                    @include element('number_area_slide_text_box', 'title') {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 23.7px;
+                        margin-left: 40px;
+                    }
+    
+                    @include element('number_area_slide_text_box', 'list') {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-left: 27px;
+    
+                        li {
+                            margin-top: 15px;
+                        }
+                    }
+    
+                    @include smal-element('number_area_slide_text_box', 'button') {
+                        margin-left: 37px;
+                    }
+                }
+            }
+    
+            @include element('number_area', 'for_carousel') {
+                display: flex;
+                align-items: center;
+            }
         }
     }
+    
+    @include block('map') {    
+        @include smal-element('map', 'area') {
+            @include smal-element('map_area', 'info') {
+                width: 369px;
+            }
+    
+            @include smal-element('map_area', 'map') {
+                margin-left: 369px;
+            }
+        }
+    }
+
 }
 
+
 @media screen and (max-width: 320px) {
-    .container {
+    @include block('container') {
         width: 290px;
     }
 
-    .header {
-        
-        &__menu {
+    @include block('header') {
+        @include element('header', 'menu') {
             position: absolute;
             flex-direction: column;
             z-index: 99;
             top: 100px;
             display: none;
-
-
+    
             a {
                 margin-top: 20px;
                 margin-left: 0px;
@@ -141,103 +168,118 @@
                 font-weight: 500;
                 line-height: 23.7px;
                 text-align: left;
-
             }
-
-            &__more_info {
+    
+            @include element('header_menu', 'more_info') {
                 display: block;
                 margin-top: 25px;
-
+    
                 a {
                     font-family: Rubik;
                     font-size: $main-desktop-size;
                     font-weight: 400;
                     line-height: 18.96px;
                 }
-
-                &__online {
+    
+                @include element('header_menu_more_info', 'online') {
                     margin-top: 25px;
-                    
+    
                     a {
                         font-size: 25px;
                         margin-right: 10px;
                     }
                 }
-
             }
         }
     
-        &__burger {
+        @include element('header', 'burger') {
             display: block;
         }
     }
+    
 
-    .main_text {
-        margin-top: 35px;
 
-       &__city {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14.4px;    
-       }
-
-       &__name {
-        font-family: Rubik;
-        font-size: 44px;
-        font-weight: 700;
-        line-height: 52.14px;
-       }
-
-       &__cosines {
-        font-size: $main-desktop-size;
-        font-weight: 500;
-        line-height: 19.2px;
-       }
+    
+    @include block('main') {
+        background: url('../img/main-cat-320.png') bottom no-repeat;
+        height: 457px;
+      
+        @include element('main', 'text') {
+            margin-top: 35px;
+      
+            @include element('main__text', 'city') {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14.4px;
+            }
+      
+            @include element('main__text', 'name') {
+                font-family: Rubik;
+                font-size: 44px;
+                font-weight: 700;
+                line-height: 52.14px;
+            }
+      
+            @include element('main__text', 'cosines') {
+                font-size: $main-desktop-size;
+                font-weight: 500;
+                line-height: 19.2px;
+            }
+        }
     }
-
-    .mask_backgorund {
+    
+    @include block('mask_backgorund') {
         background: url('../img/MaskGroup320.png');
         height: 290px;
     }
+    
+    
 
-    .main {
-        background: url('../img/main-cat-320.png') bottom no-repeat;
-        height: 457px;
-    }
-
-    .WhyWe_area {
-        h3 {
-            font-family: Rubik;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 33.18px;          
-        }
-
-        &_rows__block__text {
-            h4 {
-
+    @include block('WhyWe') {
+        @include smal-element('WhyWe', 'area') {
+            h3 {
                 font-family: Rubik;
-                font-size: 18px;
-                font-weight: 500;
-                line-height: 25.2px;
-
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 33.18px;    
+            }
+    
+            @include smal-element('WhyWe_area', 'rows') {
+    
+                @include element('WhyWe_area_rows', 'row') {
+                }
+    
+                @include element('WhyWe_area_rows', 'block') {
+                    padding-top: 15px;
+    
+                    @include element('WhyWe_area_rows__block', 'text') {
+                        h4 {
+                            font-family: Rubik;
+                            font-size: 18px;
+                            font-weight: 500;
+                            line-height: 25.2px;
+                        }
+    
+                        @include element('WhyWe_area_rows__block__text', 'desription') {
+                            font-size: 15px;
+                            font-weight: 400;
+                            line-height: 21px;
+                        }
+                    }
+                }
             }
         }
-
-        &_rows__block__text__desription {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 21px;
-        }
     }
-
-    .background_fish {
+    
+    @include block('background_fish') {
         margin-top: 1380px;
+    
         img {
             width: 106px;
             height: 46px;
         }
     }
+    
 
     .background_paw {
         margin-top: 130px;
@@ -246,104 +288,125 @@
         }
     }
 
-    .number {
+    @include block('number') {
         margin-top: 1300px;
         height: 640px;
-
-        &_area_slide__img{
-            width: 290px;
-            height: 192px;
-        }
-
-        &_area_slide_text_box {
-            width: 290px;
-            height: 250px;
-            margin-top: 193px;
-            padding-right: 30px;
-            margin-left: 0px;
-
-            &__title{
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 23.7px;
-                margin-left: 40px;
+    
+        @include smal-element('number', 'area') {    
+            @include smal-element('number_area', 'slide') {
+    
+                @include element('number_area_slide', 'img') {
+                    width: 290px;
+                    height: 192px;
+                }
+    
+                @include smal-element('number_area_slide', 'text_box') {
+                    width: 290px;
+                    height: 250px;
+                    margin-left: 0px;
+                    margin-top: 193px;
+                    padding-right: 30px;
+    
+                    @include element('number_area_slide_text_box', 'title') {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 23.7px;
+                        margin-left: 40px;
+                    }
+    
+                    @include element('number_area_slide_text_box', 'list') {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-left: 27px;
+                    }
+    
+                    @include smal-element('number_area_slide_text_box', 'button') {
+                        margin-left: 37px;
+    
+    
+                        @include element('number_area_slide_text_box_button', 'paw') {
+                            margin-left: 20px;
+                        }
+                    }
+                }
             }
-
-            &__list {
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 18px;
-                margin-left: 27px;
-
+    
+            @include element('number_area', 'for_carousel') {
+    
+                @include element('number_area__for_carousel', 'butons') {
+                    margin-top: 250px;
+                    }
+            
+    
+                @include element('number_area__for_carousel', 'numbers_slide') {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 250px;
+    
+                }
             }
-
-            &_button {
-                margin-left: 37px;
-            }
         }
-
-        &_area__for_carousel__butons {
-            margin-top: 250px;
-        }
-
-        &_area__for_carousel__numbers_slide {
-            margin-top: 250px;
-        }
-
-        
     }
 
-    .reviews {
+    @include block('reviews') {
         margin-top: 100px;
+    
+        @include smal-element('reviews', 'area') {
 
-        &_buttons {
-            margin-top: 30px;
-        }
-
-        &_area__coments_one {
-            height: 230px;
-            width: 290px;
-            padding-top: 20px;
-            padding-right: 10px;
-            margin-left: 15px;
-
-            &_info__text {
-                font-size: 15px;
-                font-weight: 500;
-                line-height: 21px;
-
-            }
-
-            &_info__img {
-                width: 21px;
-                height: 30px;
-            }
-
-            &_data {
-                display: none;
+    
+            @include element('reviews_area', 'coments') {
+    
+                @include smal-element('reviews_area__coments', 'one') {
+                    height: 230px;
+                    width: 290px;
+                    padding-top: 20px;
+                    padding-right: 10px;
+                    margin-left: 15px;
+    
+                    @include smal-element('reviews_area__coments_one', 'info') {
+    
+                        @include element('reviews_area__coments_one_info', 'img') {
+                            width: 21px;
+                            height: 30px;
+                        }
+    
+                        @include element('reviews_area__coments_one_info', 'text') {
+                            font-size: 15px;
+                            font-weight: 500;
+                            line-height: 21px;
+                        }
+                    }
+    
+                    @include smal-element('reviews_area__coments_one', 'data') {
+                        display: none;
+                    }
+                }
             }
         }
     }
 
-    .map {
-
-        &_area_info {
-            height: 320px;
-            width: 100%;
-        }
-
-        &_area_map {
-            margin-left: 0px;
-            margin-top: 550px;
-            overflow-x: hidden;
-            width: 100%;
+    @include block('map') {    
+        @include smal-element('map', 'area') {
+            @include smal-element('map_area', 'info') {
+                height: 320px;
+                width: 100%;
+            }
+    
+            @include smal-element('map_area', 'map') {
+                margin-left: 0px;
+                margin-top: 550px;
+                overflow-x: hidden;
+                width: 100%;
+            }
         }
     }
+    
 
-    .up_footer {
+    @include block('up_footer') {
         margin-top: 550px;
 
-        &__menu {
+        @include element('up_footer', 'menu') {
             position: absolute;
             margin-top: 120px;
             
@@ -352,14 +415,11 @@
                 margin-right: 40px;
                 margin-top: 10px;
             }
-
-
         }
     }
 
-
-    .footer {
+    @include block('footer') {
         margin-top: 70px;
     }
-    
 }
+    

@@ -42,8 +42,8 @@ export default function sliderRooms() {
                 checkForRadioButtonPlus();
             }
         } else if (window.innerWidth > 320 && window.innerWidth <= 768) {
-            if (offset > -1304) {
-                offset -= 652.5;
+            if (offset > -1325) {
+                offset -= 662.5;
                 slider.style.left = offset + 'rem';
                 checkForRadioButtonPlus();
             }
@@ -65,14 +65,14 @@ export default function sliderRooms() {
             }  
         }  else if (window.innerWidth > 320 && window.innerWidth <= 768) {
             if (offset < 0) {
-                offset  += 652.5;
-                slider.style.left = offset + 'px';
+                offset  += 662.5;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonMinus();
             }  
         } else if (window.innerWidth <= 320) {
             if (offset < 0) {
-                offset  += 10290;
-                slider.style.left = offset + 'px';
+                offset  += 643;
+                slider.style.left = offset + 'rem';
                 checkForRadioButtonMinus();
             }  
         }
