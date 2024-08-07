@@ -1,0 +1,7 @@
+include ../../header/nav/link/header-nav-link.pug 
+
+mixin header-nav()
+    - 
+    each item in headerNavLink
+        a(class='header__menu__one_text' href='#')= item
+        

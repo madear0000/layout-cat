@@ -1,0 +1,26 @@
+include ../header/logo/header-logo.pug
+include ../header/nav/header-nav.pug
+include ../header/mobile/header-menu-more-info/header-menu-more-info.pug
+include ../header/mobile/header-burger/header-burger.pug
+
+mixin header()
+    header
+        div(id="head").head
+            div.container 
+                div.header
+                    div.header__logo 
+                        +header-logo()
+                    div(id="menu").header__menu 
+                        +header-nav()
+                        div.header__menu__more_info 
+                            +header-menu-more-info() 
+                    +header-burger()
+
+
+                
+
+
+
+
+
+
