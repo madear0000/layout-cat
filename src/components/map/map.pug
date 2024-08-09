@@ -1,0 +1,13 @@
+include ../container/container.pug
+include ./plan/map-plan.pug
+include ./text-block/map-text-block.pug
+
+
+mixin map()
+    section.map(id="map")
+        .map_area
+            .container
+                .map_area_info
+                    +map-text-block()
+            +map-plan()
+            

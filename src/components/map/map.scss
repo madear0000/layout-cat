@@ -1,0 +1,107 @@
+@import "../../style/mixins.scss";
+@import '../../style/variables.scss';
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+@include block('map') {
+    background-color: rgba(250, 198, 99, 1);
+    height: 580px;
+    margin-top: 150px;
+
+    @include smal-element('map', 'area') {
+        display: flex;
+        width: 100%;
+
+        @include smal-element('map_area', 'info') {
+            width: 568px;
+            padding-top: 70px;
+
+            @include element('map_area_info', 'text') {
+                @include element('map_area_info__text', 'main_text') {
+                    font-family: Rubik;
+                    font-size: $title-desktop-size;
+                    font-weight: 700;
+                    line-height: 42.66px;
+                }
+
+                @include element('map_area_info__text', 'block') {
+                    width: 227px;
+                    margin-top: 30px;
+
+                    @include element('map_area_info__text', 'block__title') {
+                        font-size: $main-desktop-size;
+                        font-weight: 700;
+                        line-height: 19.2px;
+                    }
+
+                    @include element('map_area_info__text__block', 'text_area') {
+                        font-family: Lato;
+                        font-size: $main-desktop-size;
+                        font-weight: 400;
+                        line-height: 19.2px;
+                        text-align: left;
+
+                        @include element('map_area_info__text__block__text_area', 'links') {
+                            color: black;
+                            text-decoration: none;    
+                        }
+
+                        @include element('map_area_info__text__block__text_area', 'brands') {
+                            color: black;
+                            text-decoration: none;
+
+                            @include block('fa-brands') {
+                                font-size: 25px;
+                                margin-right: 10px;
+                            }
+
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include smal-element('map_area', 'map') {
+            position: absolute;
+            margin-left: 570px;
+            overflow-x: hidden;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @include block('map') {    
+        @include smal-element('map', 'area') {
+            @include smal-element('map_area', 'info') {
+                width: 50vw;
+            }
+    
+            @include smal-element('map_area', 'map') {
+                margin-left: 50vw;
+                width: 50vw;
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    @include block('map') {    
+        @include smal-element('map', 'area') {
+            @include smal-element('map_area', 'info') {
+                height: 320px;
+                width: 100%;
+            }
+    
+            @include smal-element('map_area', 'map') {
+                margin-left: 0px;
+                margin-top: 550px;
+                overflow-x: hidden;
+                width: 100%;
+            }
+        }
+    }
+}

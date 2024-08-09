@@ -1,0 +1,12 @@
+include ./area-comment-info/reviews-area-comment-info.pug
+
+mixin area-comment()
+    .reviews_area__coments
+        each review in reviews
+            .reviews_area__coments_one
+                .reviews_area__coments_one_info
+                    img.reviews_area__coments_one_info__img(src="src/assets/marks.png", alt='"')
+                    .reviews_area__coments_one_info__text= review.text
+                .reviews_area__coments_one_data
+                    .reviews_area__coments_one_data_name= review.name
+                    .reviews_area__coments_one_data_date= review.date

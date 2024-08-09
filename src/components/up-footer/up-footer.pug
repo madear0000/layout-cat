@@ -1,0 +1,13 @@
+include ../container/container.pug
+include ./menu/up-footer-menu.pug
+include ./logo/up-footer-logo.pug
+
+mixin up-footer()
+    section.up_footers
+        .container
+            .up_footer
+                .up_footer__logo
+                    +logo()
+                .up_footer__menu
+                    +menu()
+                    

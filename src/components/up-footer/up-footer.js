@@ -1,0 +1,1 @@
+import './up-footer.scss'

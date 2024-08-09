@@ -1,0 +1,12 @@
+include ../container/container.pug
+include ./area-comment/reviews-area-comment.pug
+include ./buttons/reviews-buttons.pug
+
+mixin reviews()
+    section.reviews#reviews
+        .reviews_area
+            h4.reviews_area__main_title Отзывы
+            +area-comment()
+            .container
+                +reviews-buttons.pug
+                

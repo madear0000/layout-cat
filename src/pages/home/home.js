@@ -1,1 +1,9 @@
 import '../../components/header/header';
+import '../../components/container/container';
+import '../../components/main/main';
+import '../../components/why-we/why-we';
+import '../../components/number/number';
+import '../../components/reviews/reviews';
+import '../../components/map/map';
+import '../../components/up-footer/up-footer';
+import '../../components/footer/footer';

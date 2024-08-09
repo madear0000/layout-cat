@@ -1,0 +1,141 @@
+@import "../../style/mixins.scss";
+@import '../../style/variables.scss';
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+
+@include block('main') {
+    width: 100%;
+    background: url('../../assets/main-cat.png') right no-repeat;
+    height: 504px;
+    border-top: 1px solid transparent;
+  
+    @include element('main', 'text') {
+      position: relative;
+      margin-top: 158px;
+  
+      @include element('main__text', 'city') {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+      }
+  
+      @include element('main__text', 'name') {
+
+        @include element('main__text__name', 'title') {
+          font-family: 'Rubik';
+          font-size: 62px;
+          font-weight: 700;
+          line-height: 73.47px;
+        }
+      }
+  
+      @include element('main__text', 'cosines') {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+  
+    @include element('main', 'button') {
+      margin-top: 40px;
+      position: relative;
+      display: flex;
+      width: 206px;
+      height: 50px;
+      background-color: white;
+      border: none;
+      border-radius: 40px;
+      padding-left: 30px;
+      align-items: center;
+  
+      @include element('main__button', 'book') {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        font-size: $main-desktop-size;
+        font-weight: $title-weight;
+        line-height: 19.2px;
+  
+        &:hover {
+          color: black;
+        }
+      }
+  
+      @include element('main__button', 'paw') {
+        margin-left: 20px;
+      }
+    }
+}
+
+@include block('mask_background') {
+    position: absolute;
+    background: url('../../assets/MaskGroup.png') left no-repeat;
+    height: 503px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    @include block('container') {
+        width: 678px;
+    }
+
+    @include block('main') {
+        background: url('../../assets/main-cat-768.png') center bottom no-repeat;
+        height: 868px;
+        text-align: center;
+
+        @include element('main', 'button') {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include element('main', 'text') {
+            margin-top: 100px;
+        }
+    }
+
+
+    @include block('mask_background') {
+        background: url('../../assets/MaskBackgroundTop.png') center no-repeat;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    @include block('container') {
+        width: 290px;
+    }
+
+    @include block('main') {
+        background: url('../../assets/main-cat-320.png') bottom no-repeat;
+        height: 457px;
+      
+        @include element('main', 'text') {
+            margin-top: 35px;
+      
+            @include element('main__text', 'city') {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14.4px;
+            }
+      
+            @include element('main__text', 'name') {
+                font-family: Rubik;
+                font-size: 44px;
+                font-weight: 700;
+                line-height: 52.14px;
+            }
+      
+            @include element('main__text', 'cosines') {
+                font-size: $main-desktop-size;
+                font-weight: 500;
+                line-height: 19.2px;
+            }
+        }
+    }
+    
+    @include block('mask_background') {
+        background: url('../../assets/MaskGroup320.png');
+        height: 290px;
+    }
+}

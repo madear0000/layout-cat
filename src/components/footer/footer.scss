@@ -1,0 +1,37 @@
+@import "../../style/mixins.scss";
+@import '../../style/variables.scss';
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+
+@include block('footer') {
+    height: 50px;
+    border-top: 1px solid rgba(239, 239, 239, 1);
+
+    @include smal-element('footer', 'line') {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        text-align: left;
+        color: rgba(143, 143, 143, 1);
+    }
+
+    @include smal-element('footer_line', 'copyright') {
+        display: flex;
+
+        @include element('footer_line_copyright', 'text') {
+            margin-left: 5px;
+        }
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    @include block('footer') {
+        margin-top: 70px;
+    }
+}

@@ -1,0 +1,9 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+@include block('container'){
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lato';
+}

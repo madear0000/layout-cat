@@ -1,0 +1,53 @@
+@import "../../style/mixins.scss";
+@import '../../style/variables.scss';
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+
+@include block('up_footer'){
+    width: 100%;
+    display: flex;
+    height: 76px;
+    padding-top: 12px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include element('up_footer', 'menu') {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include element('up_footer__menu', 'string') {
+            color: black;
+            text-decoration: none;
+            font-size: $main-desktop-size;
+            font-weight: $title-weight;
+            line-height: 19.2px;
+            margin-left: 30px;
+        }
+
+        @include element('up_footer__menu', '__more_info'){
+            display: none; 
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 320px){
+    @include block('map') {    
+        @include smal-element('map', 'area') {
+            @include smal-element('map_area', 'info') {
+                height: 320px;
+                width: 100%;
+            }
+    
+            @include smal-element('map_area', 'map') {
+                margin-left: 0px;
+                margin-top: 550px;
+                overflow-x: hidden;
+                width: 100%;
+            }
+        }
+    }
+}

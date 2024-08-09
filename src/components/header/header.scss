@@ -3,14 +3,6 @@
 @import "https://fonts.fontstorage.com/import/rubik.css";
 @import "https://fonts.fontstorage.com/import/lato.css";
 
-
-@include block('container'){
-    width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Lato';
-}
-
 @include block('header') {
     width: 100%;
     @include flex(space-between, center);
@@ -22,6 +14,35 @@
 
         @include element('header', 'menu__more_info') {
             @include hidden;
+
+            @include element('header-menu-contacts', 'phone') {
+                font-family: Rubik;
+                font-size: $main-desktop-size;
+                font-weight: 400;
+                line-height: 18.96px;
+                color: black;
+                text-decoration: none;
+            }
+
+            @include element('header-menu-contacts', 'social-list') {
+
+                display: flex;
+                position: absolute;
+                margin-top: 30px;
+                list-style: none;
+                padding: 0 0 0 0;
+
+                @include element('header-menu-contacts', 'social-list-item') {
+                    font-size: 25px;
+                    margin-right: 10px;
+
+                    @include element('header-menu-contacts', 'social-link') {
+                        color: black;
+                        text-decoration: none;
+                    }
+                }
+                    
+            }
         }
     }
 
@@ -42,8 +63,14 @@
         background-color: white;
         @include hidden;
 
+        
+
+
+
+
         @include element('header__burger', 'line') {
             @include span-style(absolute, 30px, 3px, black, 5px);
+            z-index: 999;
             transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 
             &:nth-child(1) {
@@ -53,8 +80,40 @@
             &:nth-child(3) {
                 transform: translateY(10px);
             }
+
+
+
         }
     }
+}
+
+.head.open{
+    background-color: #FAC663;
+    height: 524px;
+
+    @include element('header__burger', 'line') {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+    }
+
+    @include element('header', 'burger') {
+        background-color: #FAC663;
+    }
+
+    @include element('header', 'menu') {
+        display: flex;
+    }
+
 }
 
 
@@ -86,22 +145,14 @@
                 margin-top: 25px;
     
                 @include element('header__menu__more_info', 'call') {
-                    font-family: Rubik;
-                    font-size: $main-desktop-size;
-                    font-weight: 400;
-                    line-height: 18.96px;
-                    color: black;
-                    text-decoration: none;
+                    
                 }
     
                 @include element('header__menu__more_info', 'online') {
                     margin-top: 25px;
     
                     @include element('header__menu__more_info__online', 'brands') {
-                        text-decoration: none;
-                        color: black;
-                        font-size: 25px;
-                        margin-right: 10px;
+                        
                     }
                 }
             }
