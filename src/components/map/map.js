@@ -1,1 +1,1 @@
-import './map.scss';
+import './map.scss'

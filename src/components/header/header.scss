@@ -1,77 +1,54 @@
-@import '../../style/mixins.scss';
-@import '../../style/variables.scss';
 @import "https://fonts.fontstorage.com/import/rubik.css";
 @import "https://fonts.fontstorage.com/import/lato.css";
 
-@include block('header') {
-    width: 100%;
-    @include flex(space-between, center);
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
+
+
+@include block('head') {
     height: 76px;
-    padding-top: 12px;
+}
 
-    @include element('header', 'menu') {
-        @include flex();
+@include block('header') {
+        padding-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        @include element('header', 'menu__more_info') {
-            @include hidden;
+    @include element('menu') {
+        display: flex;
 
-            @include element('header-menu-contacts', 'phone') {
-                font-family: Rubik;
-                font-size: $main-desktop-size;
-                font-weight: 400;
-                line-height: 18.96px;
-                color: black;
-                text-decoration: none;
-            }
+        @include element-modifier('one') {
+            color: black;
+            text-decoration: none;
+            margin-left: 15px;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19.2px;
+        }
 
-            @include element('header-menu-contacts', 'social-list') {
-
-                display: flex;
-                position: absolute;
-                margin-top: 30px;
-                list-style: none;
-                padding: 0 0 0 0;
-
-                @include element('header-menu-contacts', 'social-list-item') {
-                    font-size: 25px;
-                    margin-right: 10px;
-
-                    @include element('header-menu-contacts', 'social-link') {
-                        color: black;
-                        text-decoration: none;
-                    }
-                }
-                    
-            }
+        @include element('contacts') {
+            display: none;
         }
     }
 
-    @include element('header', 'menu__one_text') {
-        color: black;
-        text-decoration: none;
-        font-size: $main-desktop-size;
-        font-weight: $title-weight;
-        line-height: 19.2px;
-        margin-left: 30px;
-    }
-
-    @include element('header', 'burger') {
+    @include element('burger-menu') {
         position: relative;
         width: 40px;
         height: 40px;
         border: none;
         background-color: white;
-        @include hidden;
-
+        display: none;
         
 
-
-
-
-        @include element('header__burger', 'line') {
-            @include span-style(absolute, 30px, 3px, black, 5px);
-            z-index: 999;
+        @include element('line') {
             transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            left: 5px;
 
             &:nth-child(1) {
                 transform: translateY(-10px);
@@ -80,9 +57,6 @@
             &:nth-child(3) {
                 transform: translateY(10px);
             }
-
-
-
         }
     }
 }
@@ -91,7 +65,7 @@
     background-color: #FAC663;
     height: 524px;
 
-    @include element('header__burger', 'line') {
+    @include block('header__burger-menu__line') {
         &:nth-child(1) {
             transform: translateY(0) rotate(45deg);
         }
@@ -106,60 +80,64 @@
 
     }
 
-    @include element('header', 'burger') {
+    @include block('header__burger-menu') {
         background-color: #FAC663;
     }
 
-    @include element('header', 'menu') {
+    @include block('header__menu') {
         display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 350px;
+
+        @include element-modifier('one') {
+            font-family: Rubik;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 23.7px;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        @include element('contacts') {
+            display: block;
+            margin-top: 40px;
+
+            @include element('phone-number') {
+                font-family: Rubik;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 18.96px;
+                color: black;
+                text-decoration: none;
+            }
+
+            @include element('online') {
+                margin-top: 20px;
+                @include element-modifier('networks') {
+                    color: black;
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
     }
 
 }
 
 
 @media screen and (max-width: 320px) {
-    @include block('container') {
-        width: 290px;
-    }
-
     @include block('header') {
-        @include element('header', 'menu') {
-            position: absolute;
-            flex-direction: column;
-            z-index: 99;
-            top: 100px;
+        @include element('menu') {
             display: none;
-    
-            @include element('header__menu', 'one_text') {
-                margin-top: 20px;
-                margin-left: 0px;
-                font-family: Rubik;
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 23.7px;
-                text-align: left;
-            }
-    
-            @include element('header__menu', 'more_info') {
-                display: block;
-                margin-top: 25px;
-    
-                @include element('header__menu__more_info', 'call') {
-                    
-                }
-    
-                @include element('header__menu__more_info', 'online') {
-                    margin-top: 25px;
-    
-                    @include element('header__menu__more_info__online', 'brands') {
-                        
-                    }
-                }
-            }
+            
         }
-    
-        @include element('header', 'burger') {
+
+        @include element('burger-menu') {
             display: block;
         }
     }
+
+
 }

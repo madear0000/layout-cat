@@ -1,0 +1,49 @@
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
+
+
+@include block('carousel-buttons') {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+
+    @include element('control') {
+        @include element-modifier('one-button') {
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 2px 12px 0px rgba(173, 152, 143, 0.25);
+            width: 36px;
+            height: 36px;
+            color: $background-orange;
+            border: none;
+        }
+    }
+
+    @include element('check-points') {
+        margin-left: auto;
+        margin-right: auto;
+
+
+        @include element-modifier('one-point') {
+            width: 12px;
+            height: 12px;
+            background: rgba(225, 225, 225, 1);
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: all 0.5s;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 320px) {
+    @include block('carousel-buttons') {
+        margin-top: 50px;
+    }
+}
+
+

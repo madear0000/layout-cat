@@ -1,13 +1,11 @@
-include ../container/container.pug
-include ./plan/map-plan.pug
-include ./text-block/map-text-block.pug
-
+include communication/map-communication.pug
 
 mixin map()
-    section.map(id="map")
-        .map_area
+    section.map
+        .map__info
             .container
-                .map_area_info
-                    +map-text-block()
-            +map-plan()
-            
+                .map__info__title
+                    .map__info__title--name Как нас найти
+                +map-communication
+        .map__scheme
+            script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad902a1ffc2ff79bb1a838a9f0f840c02d297a819c9e9194677e669a95d12f015&amp;width=900&amp;height=580&amp;lang=ru_RU&amp;scroll=true")

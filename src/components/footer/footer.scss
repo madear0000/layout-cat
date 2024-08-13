@@ -1,37 +1,85 @@
-@import "../../style/mixins.scss";
-@import '../../style/variables.scss';
 @import "https://fonts.fontstorage.com/import/rubik.css";
 @import "https://fonts.fontstorage.com/import/lato.css";
 
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
 
 @include block('footer') {
-    height: 50px;
-    border-top: 1px solid rgba(239, 239, 239, 1);
+    margin-top: 30px;
+    @include element('nav') {
+        height: 70px;
+        @include element('line') {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include element('menu') {
+                display: flex;
+    
+                @include element-modifier('one') {
+                    color: black;
+                    text-decoration: none;
+                    font-size: $main-desktop-size;
+                    font-weight: $title-weight;
+                    line-height: 19.2px;
+                    margin-left: 30px;
+                }
+            }
+        }
 
-    @include smal-element('footer', 'line') {
-        display: flex;
-        justify-content: space-between;
-        height: 50px;
-        align-items: center;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14.4px;
-        text-align: left;
-        color: rgba(143, 143, 143, 1);
     }
 
-    @include smal-element('footer_line', 'copyright') {
-        display: flex;
+    @include element('copyright') {
+        border-top: 1px solid rgba(239, 239, 239, 1);
+        height: 50px;
 
-        @include element('footer_line_copyright', 'text') {
-            margin-left: 5px;
+        @include element('line') {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.4px;
+            text-align: left;
+            color: rgba(143, 143, 143, 1);
+
+            @include element('law') {
+                display: flex;
+
+                @include element-modifier('text') {
+                    margin-left: 5px;
+                }
+            }
         }
     }
 
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 768px) {
     @include block('footer') {
-        margin-top: 70px;
+        margin-top: 570px;
+        @include element('nav') {
+            height: 150px;
+            @include element('line') {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include element('menu') {
+                    display: flex;
+                    flex-direction: column;
+                    @include element-modifier('one') {
+                        margin-top: 10px;
+                    }
+                }
+            }
+    
+        }
+        
+    }
+}
+
+@media screen and (max-width: 320px) {
+    @include block('container') {
+        width: 290px;
     }
 }

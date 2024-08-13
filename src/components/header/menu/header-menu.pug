@@ -1,0 +1,12 @@
+include info/header-menu-info.pug
+
+mixin header-menu()
+    .header__menu
+        each item in menuItems
+            a.header__menu--one(href="#")= item
+        .header__menu__contacts
+            a.header__menu__contacts__phone-number(href="tel:+78003335599", type="phone") 8 (800) 333-55-99
+            .header__menu__contacts__online
+                each link in socialLinks
+                    a.header__menu__contacts__online--networks(href=link.href)
+                        i(class=link.iconClass)

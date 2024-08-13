@@ -1,0 +1,13 @@
+include info/map-communication-info.pug
+
+mixin map-communication()
+     each item in mapInfo.items
+        .map__info__communication
+            .map__info__communication--title= item.title
+            if item.title === "Социальные сети"
+                .map__info__communication--description
+                    each social in item.description
+                        a(href= social.url)
+                            i.fa-brands(class=`fa ${social.icon}`)
+            else
+                .map__info__communication--description= item.description

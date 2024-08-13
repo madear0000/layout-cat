@@ -1,27 +1,13 @@
-include ../header/logo/header-logo.pug
-include ../header/nav/header-nav.pug
-include ../header/menu-more-info/header-menu-more-info.pug
-include ../header/menu-button/header-menu-button.pug
 include ../container/container.pug
+include menu/header-menu.pug
+include button/header-button.pug
 
 mixin header()
     header
-        div(id="head").head
-            .container() 
-                div.header
-                    div.header__logo 
-                        +header-logo()
-                    div(id="menu").header__menu 
-                        +header-nav()
-                        div.header__menu__more_info 
-                            +header-menu-more-info() 
-                    +header-menu-button()
-
-
-                
-
-
-
-
-
-
+        .head(id="head")
+            .container
+                .header
+                    .header__logo
+                        img(src="src/assets/logo.png", alt="")
+                    +header-menu()
+                    +header-button()

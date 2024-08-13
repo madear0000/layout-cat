@@ -1,9 +1,26 @@
-@import '../../style/mixins.scss';
-@import '../../style/variables.scss';
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
 
 @include block('container'){
     width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Lato';
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    @include block('container') {
+        width: 678px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    @include block('container') {
+        width: 290px;
+    }
 }

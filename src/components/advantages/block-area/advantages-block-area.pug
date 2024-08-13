@@ -1,0 +1,11 @@
+include info/advantages-block-area-info.pug
+
+mixin advantages-block-area()
+    .advantages__block-area
+        each advantage in advantages
+            .advantages__block-area__block
+                .advantages__block-area__block__icon
+                    img.advantages__block-area__block__icon--image(src=advantage.iconSrc alt="")
+                .advantages__block-area__block__text
+                    h4.advantages__block-area__block__text--title= advantage.title
+                    .advantages__block-area__block__text--content= advantage.content

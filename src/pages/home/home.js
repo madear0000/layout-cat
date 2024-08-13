@@ -1,9 +1,9 @@
 import '../../components/header/header';
 import '../../components/container/container';
-import '../../components/main/main';
-import '../../components/why-we/why-we';
-import '../../components/number/number';
+import '../../components/banner/banner';
+import '../../components/advantages/advantages';
+import '../../components/rooms/rooms';
+import '../../components/carousel-buttons/carousel-buttons';
 import '../../components/reviews/reviews';
 import '../../components/map/map';
-import '../../components/up-footer/up-footer';
 import '../../components/footer/footer';

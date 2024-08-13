@@ -1,5 +1,2 @@
-import './header.scss';
-import headerMenuButton from './menu-button/headerMenuButton';
-
-
-headerMenuButton();
+import './header.scss'
+import './button/button'

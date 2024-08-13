@@ -1,0 +1,12 @@
+include ../carousel-buttons/carousel-buttons.pug
+include carousel/rooms-carousel.pug
+
+mixin rooms()
+    section.rooms
+        .container
+            .rooms__title
+                .rooms__title--name Номера
+            +rooms-carousel()
+            +carousel-buttons()
+            
+

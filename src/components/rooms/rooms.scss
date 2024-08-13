@@ -1,0 +1,202 @@
+@import "https://fonts.fontstorage.com/import/rubik.css";
+@import "https://fonts.fontstorage.com/import/lato.css";
+
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
+
+
+@include block('rooms') {
+    margin-top: 140px;
+    height: 710px;
+    width: 100%;
+    overflow-x: hidden;
+
+
+    @include element('title') {
+        @include element-modifier('name') {
+            text-align: center;
+            font-family: 'Rubik';
+            font-size: $title-desktop-size;
+            font-weight: $title-weight;
+            line-height: 42.66px;
+        }
+    }
+
+    @include element('carousel') {
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: all ease 0.5s;
+
+        @include element('slide') {
+            position: relative;
+            display: flex;
+            margin-top: 70px;
+            margin-right: 10000px;
+
+            @include element('text-block') {
+                width: 500px;
+                height: 284px;
+                background: rgba(255, 255, 255, 1);
+                position: absolute;
+                margin-left: 530px;
+                margin-top: 70px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 25px 0px $shadow-color;
+                padding-top: 40px;
+                padding-right: 100px;
+
+                @include element-modifier('title') {
+                    margin-left: 100px;
+                    font-family: Rubik;
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 26.07px;
+                    text-align: left;
+                }
+
+                @include element('list') {
+                    margin-left: 87px;
+                    list-style: url('../../assets/circle.png');
+                    @include element-modifier('one-point') {
+                        margin-top: 15px;
+                    }
+                }
+
+                @include element('button') {
+                    margin-top: 20px;
+                    position: relative;
+                    display: flex;
+                    width: 206px;
+                    height: 50px;
+                    background: $background-orange;
+                    border: none;
+                    border-radius: 40px;
+                    padding-left: 30px;
+                    align-items: center;
+                    margin-left: 97px;
+
+                    @include element-modifier('text') {
+                        color: white;
+                        text-decoration: none;
+                        position: relative;
+                        font-size: $main-desktop-size;
+                        font-weight: $title-weight;
+                        line-height: 19.2px;
+                    }
+
+                    @include element-modifier('image') {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @include block('rooms') {
+        margin-top: 350px;
+        @include element('carousel') {
+            @include element('slide') {
+                @include element-modifier('image') {
+                    width: 442px;
+                    height: 326px;
+                }
+    
+                @include element('text-block') {
+                    width: 345px;
+                    height: 266px;
+                    margin-left: 330px;
+                    margin-top: 40px;
+                    padding-right: 30px;
+    
+                    @include element-modifier('title') {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 23.7px;
+                        margin-left: 40px;
+                    }
+    
+                    @include element('list') {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-left: 27px;;
+                    }
+    
+                    @include element('button') {
+                        margin-left: 37px;
+    
+                        @include element-modifier('text') {
+                            color: white;
+                            text-decoration: none;
+                            position: relative;
+                            font-size: $main-desktop-size;
+                            font-weight: $title-weight;
+                            line-height: 19.2px;
+                        }
+    
+                        @include element-modifier('image') {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    @include block('rooms') {
+        margin-top: 1300px;
+        height: 750px;
+
+        @include element('title') {
+            @include element-modifier('name') {
+                font-family: Rubik;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 33.18px;
+
+            }
+        }
+
+        @include element('carousel') {
+            @include element('slide') {
+                height: 450px;
+                @include element-modifier('image') {
+                    width: 290px;
+                    height: 192px;
+                }
+    
+                @include element('text-block') {
+                    width: 290px;
+                    height: 250px;
+                    margin-left: 0px;
+                    margin-top: 193px;
+                    padding-right: 30px;
+    
+                    @include element-modifier('title') {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 23.7px;
+                        margin-left: 40px;
+                    }
+    
+                    @include element('list') {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-left: 27px;
+                    }
+    
+                    @include element('button') {
+                        margin-top: 10px;
+                        margin-left: 37px;
+                    }
+                }
+            }
+        }
+    }
+}   

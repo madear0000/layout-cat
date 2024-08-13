@@ -1,0 +1,12 @@
+include info/reviews-comments-info.pug
+
+mixin reviews-comments()
+    .reviews__comments
+        each review in reviews
+            .reviews__comments__comment
+                .reviews__comments__comment__content
+                    img.reviews__comments__comment__content--image(src="src/assets/marks.png" alt="''")
+                    .reviews__comments__comment__content--text= review.text
+                .reviews__comments__comment__data
+                    .reviews__comments__comment__data--name= review.name
+                    .reviews__comments__comment__data--date= review.date
