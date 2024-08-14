@@ -4,9 +4,10 @@ include carousel/rooms-carousel.pug
 mixin rooms()
     section.rooms
         .container
-            .rooms__title
-                .rooms__title--name Номера
-            +rooms-carousel()
-            +carousel-buttons()
+            .rooms__area
+                .rooms__area__title
+                    .rooms__area__title--name Номера
+                +rooms-carousel()
+                +carousel-buttons()
             
 

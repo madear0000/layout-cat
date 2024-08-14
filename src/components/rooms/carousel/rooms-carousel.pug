@@ -1,15 +1,15 @@
 include info/rooms-carousel-info.pug
 
 mixin rooms-carousel()
-    .rooms__carousel
+    .rooms__area__carousel
         each room in rooms
-            .rooms__carousel__slide
-                img.rooms__carousel__slide--image(src=room.imgSrc, alt="cat")
-                .rooms__carousel__slide__text-block
-                    h5.rooms__carousel__slide__text-block--title= room.title
-                    ul.rooms__carousel__slide__text-block__list
+            .rooms__area__carousel__slide
+                img.rooms__area__carousel__slide--image(src=room.imgSrc, alt="cat")
+                .rooms__area__carousel__slide__text-block
+                    h5.rooms__area__carousel__slide__text-block--title= room.title
+                    ul.rooms__area__carousel__slide__text-block__list
                         each feature in room.features
-                            li.rooms__carousel__slide__text-block__list--one-point= feature
-                    .rooms__carousel__slide__text-block__button
-                        a.rooms__carousel__slide__text-block__button--text(href="#") Забронировать
-                        img.rooms__carousel__slide__text-block__button--image(src="src/assets/orangePaw.png", alt="")
+                            li.rooms__area__carousel__slide__text-block__list--one-point= feature
+                    .rooms__area__carousel__slide__text-block__button
+                        a.rooms__area__carousel__slide__text-block__button--text(href="#") Забронировать
+                        img.rooms__area__carousel__slide__text-block__button--image(src="src/assets/orangePaw.png", alt="")

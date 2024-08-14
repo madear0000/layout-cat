@@ -1,6 +1,6 @@
 import './carousel-buttons.scss'
 
-const slider = document.querySelector('.rooms__carousel');
+const slider = document.querySelector('.rooms__area__carousel');
 const buttonForRight = document.getElementById('right-slider');
 const buttonForLeft = document.getElementById('left-slider');
 const labelsForSliderRadioButton = document.querySelectorAll('.carousel-buttons__check-points--one-point');
