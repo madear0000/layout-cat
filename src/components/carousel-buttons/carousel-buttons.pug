@@ -1,11 +1,11 @@
-mixin carousel-buttons()
+mixin carousel-buttons(leftId, rightId, labelClass)
     .carousel-buttons
         .carousel-buttons__check-points
             - for (let i = 0; i < 3; i++)
                 input(type="radio" name="groupCatCarousel" id="radioButton#{i}" hidden)
-                label.carousel-buttons__check-points--one-point(for="radioButton#{i}")
+                label(class=`carousel-buttons__check-points--one-point ${labelClass}` for="radioButton#{i}")
         .carousel-buttons__control
-            button#left-slider.carousel-buttons__control--one-button
+            button(id=leftId).carousel-buttons__control--one-button
                 i.fa-solid.fa-angle-left
-            button#right-slider.carousel-buttons__control--one-button
+            button(id=rightId).carousel-buttons__control--one-button
                 i.fa-solid.fa-angle-right
